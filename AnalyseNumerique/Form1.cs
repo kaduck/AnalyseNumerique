@@ -56,17 +56,34 @@ namespace AnalyseNumerique
         /// <param name="b"></param>
         /// <param name="precision"></param>
         /// <param name="value">zdgyzgzquygduyq</param>
-        private void CalculDichotomique(double a, double b,double precision, out double value)
+        private void CalculDichotomique(double a, double b,double precision, double value)
         {
+            value = CalculFonction(a) * CalculFonction(b);
+            if (CalculFonction(a) * CalculFonction(b)>0)
+            {
+                errorProvider1.SetError(tbBorneSuperieure, "Les bornes définies n'encadre pas la solution");
+                return;
+            }
+            value = CalculFonction(a);
+            if (value > -precision && value < precision)
+            {
+                EcrireLog("La solution de cette equation est x = "+a);
+                EcrireLog("Nombre d'itération : 1");
+                return;
+            }
+            value = CalculFonction(b);
+            if (value > -precision && value < precision)
+            {
+                EcrireLog("La solution de cette equation est x = "+b);
+                EcrireLog("Nombre d'itération : 1");
+                return;
+            }
             int iteration = 0;
             do
             {
                 value = 0;
                 double equidistant = (a + b) / 2.0;
-                foreach (EquationControl equa in flpEquation.Controls)
-                {
-                    value += equa.CalculEquation(equidistant);
-                }
+                value = CalculFonction(equidistant);
                 EcrireLog("Itération : " + iteration + " | La valeur de l'équation pour \"x = " + (a + b) / 2.0 + "\" est de " + value);
                 if (value > 0)
                 {
@@ -79,7 +96,7 @@ namespace AnalyseNumerique
                     a = equidistant;
                 }
                 iteration++;
-                if (iteration > 20)
+                if (iteration > 20000)
                 {
                     EcrireLog("Trop grand nombre d'itération | Arrét du calcul");
                     return;
@@ -90,10 +107,71 @@ namespace AnalyseNumerique
             EcrireLog("Nombre d'itération : " + iteration);
         }
 
+        private double CalculFonction(double a)
+        {
+            double value = 0;
+            foreach (EquationControl equa in flpEquation.Controls)
+            {
+                value += equa.CalculEquation(a);
+            }
+            return value;
+        }
+
+        private double CalculDerive(double a)
+        {
+            double value = 0;
+            foreach (EquationControl equa in flpEquation.Controls)
+            {
+                value += equa.CalculDerive(a);
+            }
+            return value;
+        }
+
+        private void CalculNewton(double a,double b,double precision,double value)
+        {
+            double pointFixe = 0;
+            double x = 0;
+            if (CalculFonction(a) * CalculFonction(b) > 0)
+            {
+                errorProvider1.SetError(tbBorneSuperieure, "Les bornes définies n'encadre pas la solution");
+                return;
+            }
+            value = CalculFonction(a);
+            if (value > -precision && value < precision)
+            {
+                EcrireLog("La solution de cette equation est x = " + a);
+                tbResultat.Text = a.ToString();
+                return;
+            }
+            value = CalculFonction(b);
+            if (value > -precision && value < precision)
+            {
+                EcrireLog("La solution de cette equation est x = " + b);
+                tbResultat.Text = a.ToString();
+                return;
+            }
+            do
+            {
+                x = a;
+                value = CalculFonction(a);
+                pointFixe = 1/CalculDerive(a);
+                a = a - pointFixe * value;
+                if (CalculFonction(a) < precision && CalculFonction(a) > -precision)
+                {
+                    EcrireLog("La solution de cette equation est x = " + a);
+                    tbResultat.Text = a.ToString();
+                    return;
+                }
+            }
+            while (Math.Abs(a-x)>precision);
+            x = a;
+            EcrireLog("La solution de cette equation est x = " + a);
+            tbResultat.Text = a.ToString();
+        }
+
         private void EcrireLog(string p)
         {
             tbConsole.Text += p + "\n";
-            typeMethode ype;
         }
 
         #region Evenement
@@ -102,16 +180,17 @@ namespace AnalyseNumerique
         {
             double a = 0;
             double b = 0;
-            double value;
+            double value = 0;
             double precision = 0;
             if (!double.TryParse(tbBorneInferieure.Text, out a) || !double.TryParse(tbBorneSuperieure.Text, out b) || !double.TryParse(tbPrecision.Text, out precision))
                 return;
             switch (_typeMethode)
             {
                 case typeMethode.Dichotomique:
-                    CalculDichotomique(a, b, precision, out value);
+                    CalculDichotomique(a, b, precision, value);
                     break;
                 case typeMethode.Newton:
+                    CalculNewton(a, b, precision, value);
                     break;
                 case typeMethode.Secante:
                     break;
@@ -125,28 +204,16 @@ namespace AnalyseNumerique
             switch (((ComboBox)sender).Text)
             {
                 case "Dichotomie":
-                    tbHauteurPas.Visible = false;
-                    tbNombrePas.Visible = false;
-                    lbHauteurPas.Visible = false;
-                    lbNombrePas.Visible = false;
                     tbPrecision.Visible = true;
                     lbPrecision.Visible = true;
                     _typeMethode = typeMethode.Dichotomique;
                     break;
                 case "Newton":
-                    tbHauteurPas.Visible = true;
-                    tbNombrePas.Visible = true;
-                    lbHauteurPas.Visible = true;
-                    lbNombrePas.Visible = true;
-                    tbPrecision.Visible = false;
-                    lbPrecision.Visible = false;
+                    tbPrecision.Visible = true;
+                    lbPrecision.Visible = true;
                     _typeMethode = typeMethode.Newton;
                     break;
                 case "Secante":
-                    tbHauteurPas.Visible = true;
-                    tbNombrePas.Visible = true;
-                    lbHauteurPas.Visible = true;
-                    lbNombrePas.Visible = true;
                     tbPrecision.Visible = false;
                     lbPrecision.Visible = false;
                     _typeMethode = typeMethode.Secante;

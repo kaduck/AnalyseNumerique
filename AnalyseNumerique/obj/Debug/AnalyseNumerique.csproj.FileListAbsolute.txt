@@ -18,3 +18,13 @@ H:\Documents\ProgSisi\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumeriq
 H:\Documents\ProgSisi\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.Form1.resources
 H:\Documents\ProgSisi\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.Properties.Resources.resources
 H:\Documents\ProgSisi\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.csproj.GenerateResource.Cache
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\bin\Debug\AnalyseNumerique.exe.config
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.exe
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.pdb
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\bin\Debug\AnalyseNumerique.exe
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\bin\Debug\AnalyseNumerique.pdb
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.csprojResolveAssemblyReference.cache
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.EquationControl.resources
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.Form1.resources
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.Properties.Resources.resources
+E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.csproj.GenerateResource.Cache

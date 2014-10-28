@@ -55,10 +55,16 @@ namespace AnalyseNumerique
                 switch (cbFonction.Text)
                 {
                     case "log":
-                        result = alpha*Math.Log10(Math.Pow(Math.Abs(value),_exposant));
+                        if (value > 0)
+                            result = alpha * Math.Log10(Math.Pow(value, _exposant));
+                        else
+                            result = 0;
                         break;
                     case "ln":
-                        result = alpha * Math.Log(Math.Pow(Math.Abs(value), _exposant));
+                        if (value > 0)
+                            result = alpha * Math.Log(Math.Pow(value, _exposant));
+                        else
+                            result = 0;
                         break;
                     case "sin":
                         result = alpha * Math.Sin(Math.Pow(value, _exposant));
@@ -67,7 +73,40 @@ namespace AnalyseNumerique
                         result = alpha * Math.Cos(Math.Pow(value, _exposant));
                         break;
                     case "*" :
-                        result = alpha*value;
+                        result = alpha * Math.Pow(value, _exposant);
+                        break;
+                }
+                return result;
+            }
+            else return 0;
+        }
+
+        internal double CalculDerive(double a)
+        {
+
+            double result = 0;
+            double alpha;
+            if (double.TryParse(tbAlpha.Text, out alpha))
+            {
+                if (_exposant == 0)
+                    return alpha;
+
+                switch (cbFonction.Text)
+                {
+                    case "log":
+                        result = alpha * _exposant/(a*Math.Log10(1));
+                        break;
+                    case "ln":
+                        result = alpha * _exposant/a;
+                        break;
+                    case "sin":
+                        result = alpha * _exposant*Math.Pow(a,_exposant-1)*Math.Cos(Math.Pow(a,_exposant));
+                        break;
+                    case "cos":
+                        result = -alpha * _exposant*Math.Pow(a,_exposant-1)*Math.Sin(Math.Pow(a, _exposant));
+                        break;
+                    case "*":
+                        result = alpha * Math.Pow(a,_exposant-1);
                         break;
                 }
                 return result;

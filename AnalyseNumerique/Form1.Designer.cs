@@ -35,10 +35,6 @@
             this.tbPrecision = new System.Windows.Forms.TextBox();
             this.lbPrecision = new System.Windows.Forms.Label();
             this.btCalculer = new System.Windows.Forms.Button();
-            this.tbNombrePas = new System.Windows.Forms.TextBox();
-            this.lbNombrePas = new System.Windows.Forms.Label();
-            this.tbHauteurPas = new System.Windows.Forms.TextBox();
-            this.lbHauteurPas = new System.Windows.Forms.Label();
             this.tbBorneSuperieure = new System.Windows.Forms.TextBox();
             this.tbBorneInferieure = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -86,10 +82,6 @@
             this.groupBox1.Controls.Add(this.tbPrecision);
             this.groupBox1.Controls.Add(this.lbPrecision);
             this.groupBox1.Controls.Add(this.btCalculer);
-            this.groupBox1.Controls.Add(this.tbNombrePas);
-            this.groupBox1.Controls.Add(this.lbNombrePas);
-            this.groupBox1.Controls.Add(this.tbHauteurPas);
-            this.groupBox1.Controls.Add(this.lbHauteurPas);
             this.groupBox1.Controls.Add(this.tbBorneSuperieure);
             this.groupBox1.Controls.Add(this.tbBorneInferieure);
             this.groupBox1.Controls.Add(this.label4);
@@ -97,14 +89,14 @@
             this.groupBox1.Controls.Add(this.flpEquation);
             this.groupBox1.Location = new System.Drawing.Point(13, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 434);
+            this.groupBox1.Size = new System.Drawing.Size(457, 434);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fonction";
             // 
             // tbPrecision
             // 
-            this.tbPrecision.Location = new System.Drawing.Point(341, 56);
+            this.tbPrecision.Location = new System.Drawing.Point(241, 28);
             this.tbPrecision.Name = "tbPrecision";
             this.tbPrecision.Size = new System.Drawing.Size(36, 20);
             this.tbPrecision.TabIndex = 14;
@@ -113,7 +105,7 @@
             // lbPrecision
             // 
             this.lbPrecision.AutoSize = true;
-            this.lbPrecision.Location = new System.Drawing.Point(274, 57);
+            this.lbPrecision.Location = new System.Drawing.Point(174, 29);
             this.lbPrecision.Name = "lbPrecision";
             this.lbPrecision.Size = new System.Drawing.Size(61, 13);
             this.lbPrecision.TabIndex = 13;
@@ -122,7 +114,7 @@
             // btCalculer
             // 
             this.btCalculer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCalculer.Location = new System.Drawing.Point(382, 24);
+            this.btCalculer.Location = new System.Drawing.Point(294, 24);
             this.btCalculer.Name = "btCalculer";
             this.btCalculer.Size = new System.Drawing.Size(147, 23);
             this.btCalculer.TabIndex = 12;
@@ -130,43 +122,9 @@
             this.btCalculer.UseVisualStyleBackColor = true;
             this.btCalculer.Click += new System.EventHandler(this.btCalculer_Click);
             // 
-            // tbNombrePas
-            // 
-            this.tbNombrePas.Location = new System.Drawing.Point(232, 56);
-            this.tbNombrePas.Name = "tbNombrePas";
-            this.tbNombrePas.Size = new System.Drawing.Size(36, 20);
-            this.tbNombrePas.TabIndex = 11;
-            this.tbNombrePas.Validating += new System.ComponentModel.CancelEventHandler(this.tbDegree_Validating);
-            // 
-            // lbNombrePas
-            // 
-            this.lbNombrePas.AutoSize = true;
-            this.lbNombrePas.Location = new System.Drawing.Point(140, 58);
-            this.lbNombrePas.Name = "lbNombrePas";
-            this.lbNombrePas.Size = new System.Drawing.Size(86, 13);
-            this.lbNombrePas.TabIndex = 10;
-            this.lbNombrePas.Text = "nombre de pas =";
-            // 
-            // tbHauteurPas
-            // 
-            this.tbHauteurPas.Location = new System.Drawing.Point(98, 55);
-            this.tbHauteurPas.Name = "tbHauteurPas";
-            this.tbHauteurPas.Size = new System.Drawing.Size(36, 20);
-            this.tbHauteurPas.TabIndex = 9;
-            this.tbHauteurPas.Validating += new System.ComponentModel.CancelEventHandler(this.tbBorneInferieure_Validating);
-            // 
-            // lbHauteurPas
-            // 
-            this.lbHauteurPas.AutoSize = true;
-            this.lbHauteurPas.Location = new System.Drawing.Point(8, 58);
-            this.lbHauteurPas.Name = "lbHauteurPas";
-            this.lbHauteurPas.Size = new System.Drawing.Size(87, 13);
-            this.lbHauteurPas.TabIndex = 8;
-            this.lbHauteurPas.Text = "hauteur de pas =";
-            // 
             // tbBorneSuperieure
             // 
-            this.tbBorneSuperieure.Location = new System.Drawing.Point(232, 26);
+            this.tbBorneSuperieure.Location = new System.Drawing.Point(119, 26);
             this.tbBorneSuperieure.Name = "tbBorneSuperieure";
             this.tbBorneSuperieure.Size = new System.Drawing.Size(36, 20);
             this.tbBorneSuperieure.TabIndex = 7;
@@ -174,7 +132,7 @@
             // 
             // tbBorneInferieure
             // 
-            this.tbBorneInferieure.Location = new System.Drawing.Point(98, 26);
+            this.tbBorneInferieure.Location = new System.Drawing.Point(40, 26);
             this.tbBorneInferieure.Name = "tbBorneInferieure";
             this.tbBorneInferieure.Size = new System.Drawing.Size(36, 20);
             this.tbBorneInferieure.TabIndex = 6;
@@ -183,7 +141,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(204, 30);
+            this.label4.Location = new System.Drawing.Point(91, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(22, 13);
             this.label4.TabIndex = 5;
@@ -192,7 +150,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 30);
+            this.label3.Location = new System.Drawing.Point(12, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 13);
             this.label3.TabIndex = 4;
@@ -203,9 +161,9 @@
             this.flpEquation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpEquation.Location = new System.Drawing.Point(3, 82);
+            this.flpEquation.Location = new System.Drawing.Point(3, 54);
             this.flpEquation.Name = "flpEquation";
-            this.flpEquation.Size = new System.Drawing.Size(539, 349);
+            this.flpEquation.Size = new System.Drawing.Size(451, 377);
             this.flpEquation.TabIndex = 0;
             // 
             // label2
@@ -233,9 +191,9 @@
             this.groupBox2.Controls.Add(this.tbConsole);
             this.groupBox2.Controls.Add(this.tbResultat);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(564, 37);
+            this.groupBox2.Location = new System.Drawing.Point(476, 37);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(408, 434);
+            this.groupBox2.Size = new System.Drawing.Size(275, 434);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Résultat";
@@ -246,10 +204,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbConsole.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tbConsole.Location = new System.Drawing.Point(3, 82);
+            this.tbConsole.Location = new System.Drawing.Point(3, 54);
             this.tbConsole.Name = "tbConsole";
             this.tbConsole.ReadOnly = true;
-            this.tbConsole.Size = new System.Drawing.Size(402, 349);
+            this.tbConsole.Size = new System.Drawing.Size(269, 377);
             this.tbConsole.TabIndex = 14;
             this.tbConsole.Text = "";
             // 
@@ -279,7 +237,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 483);
+            this.ClientSize = new System.Drawing.Size(763, 483);
             this.Controls.Add(this.tbDegree);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
@@ -307,10 +265,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flpEquation;
-        private System.Windows.Forms.TextBox tbNombrePas;
-        private System.Windows.Forms.Label lbNombrePas;
-        private System.Windows.Forms.TextBox tbHauteurPas;
-        private System.Windows.Forms.Label lbHauteurPas;
         private System.Windows.Forms.TextBox tbBorneSuperieure;
         private System.Windows.Forms.Button btCalculer;
         private System.Windows.Forms.Label label2;
