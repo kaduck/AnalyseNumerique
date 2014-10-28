@@ -32,6 +32,8 @@
             this.cbMethode = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbPrecision = new System.Windows.Forms.TextBox();
+            this.lbPrecision = new System.Windows.Forms.Label();
             this.btCalculer = new System.Windows.Forms.Button();
             this.tbNombrePas = new System.Windows.Forms.TextBox();
             this.lbNombrePas = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tbDegree = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tbPrecision = new System.Windows.Forms.TextBox();
-            this.lbPrecision = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -102,6 +102,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fonction";
             // 
+            // tbPrecision
+            // 
+            this.tbPrecision.Location = new System.Drawing.Point(341, 56);
+            this.tbPrecision.Name = "tbPrecision";
+            this.tbPrecision.Size = new System.Drawing.Size(36, 20);
+            this.tbPrecision.TabIndex = 14;
+            this.tbPrecision.Validating += new System.ComponentModel.CancelEventHandler(this.tbBorneInferieure_Validating);
+            // 
+            // lbPrecision
+            // 
+            this.lbPrecision.AutoSize = true;
+            this.lbPrecision.Location = new System.Drawing.Point(274, 57);
+            this.lbPrecision.Name = "lbPrecision";
+            this.lbPrecision.Size = new System.Drawing.Size(61, 13);
+            this.lbPrecision.TabIndex = 13;
+            this.lbPrecision.Text = "précision = ";
+            // 
             // btCalculer
             // 
             this.btCalculer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -119,6 +136,7 @@
             this.tbNombrePas.Name = "tbNombrePas";
             this.tbNombrePas.Size = new System.Drawing.Size(36, 20);
             this.tbNombrePas.TabIndex = 11;
+            this.tbNombrePas.Validating += new System.ComponentModel.CancelEventHandler(this.tbDegree_Validating);
             // 
             // lbNombrePas
             // 
@@ -135,6 +153,7 @@
             this.tbHauteurPas.Name = "tbHauteurPas";
             this.tbHauteurPas.Size = new System.Drawing.Size(36, 20);
             this.tbHauteurPas.TabIndex = 9;
+            this.tbHauteurPas.Validating += new System.ComponentModel.CancelEventHandler(this.tbBorneInferieure_Validating);
             // 
             // lbHauteurPas
             // 
@@ -151,6 +170,7 @@
             this.tbBorneSuperieure.Name = "tbBorneSuperieure";
             this.tbBorneSuperieure.Size = new System.Drawing.Size(36, 20);
             this.tbBorneSuperieure.TabIndex = 7;
+            this.tbBorneSuperieure.Validating += new System.ComponentModel.CancelEventHandler(this.tbBorneInferieure_Validating);
             // 
             // tbBorneInferieure
             // 
@@ -158,7 +178,7 @@
             this.tbBorneInferieure.Name = "tbBorneInferieure";
             this.tbBorneInferieure.Size = new System.Drawing.Size(36, 20);
             this.tbBorneInferieure.TabIndex = 6;
-            this.tbBorneInferieure.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbBorneInferieure.Validating += new System.ComponentModel.CancelEventHandler(this.tbBorneInferieure_Validating);
             // 
             // label4
             // 
@@ -254,22 +274,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // tbPrecision
-            // 
-            this.tbPrecision.Location = new System.Drawing.Point(341, 56);
-            this.tbPrecision.Name = "tbPrecision";
-            this.tbPrecision.Size = new System.Drawing.Size(36, 20);
-            this.tbPrecision.TabIndex = 14;
-            // 
-            // lbPrecision
-            // 
-            this.lbPrecision.AutoSize = true;
-            this.lbPrecision.Location = new System.Drawing.Point(274, 57);
-            this.lbPrecision.Name = "lbPrecision";
-            this.lbPrecision.Size = new System.Drawing.Size(61, 13);
-            this.lbPrecision.TabIndex = 13;
-            this.lbPrecision.Text = "précision = ";
             // 
             // Form1
             // 

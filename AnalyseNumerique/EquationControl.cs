@@ -63,6 +63,12 @@ namespace AnalyseNumerique
                     case "sin":
                         result = alpha * Math.Sin(Math.Pow(value, _exposant));
                         break;
+                    case "cos":
+                        result = alpha * Math.Cos(Math.Pow(value, _exposant));
+                        break;
+                    case "*" :
+                        result = alpha*value;
+                        break;
                 }
                 return result;
             }

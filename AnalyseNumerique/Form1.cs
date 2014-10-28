@@ -49,28 +49,13 @@ namespace AnalyseNumerique
             }
         }
 
-        private void btCalculer_Click(object sender, EventArgs e)
-        {
-            double a = 0;
-            double b = 0;
-            double value;
-            double precision = 0;
-            if (!double.TryParse(tbBorneInferieure.Text, out a) || !double.TryParse(tbBorneSuperieure.Text, out b) || !double.TryParse(tbPrecision.Text,out precision))
-                return;
-            switch (_typeMethode)
-            {
-                case typeMethode.Dichotomique:
-                    CalculDichotomique(a, b, precision,out value);
-                    break;
-                case typeMethode.Newton:
-                    break;
-                case typeMethode.Secante:
-                    break;
-                default:
-                    break;
-            }
-        }
-
+        /// <summary>
+        /// Test    
+        /// </summary>
+        /// <param name="a">test</param>
+        /// <param name="b"></param>
+        /// <param name="precision"></param>
+        /// <param name="value">zdgyzgzquygduyq</param>
         private void CalculDichotomique(double a, double b,double precision, out double value)
         {
             int iteration = 0;
@@ -108,6 +93,31 @@ namespace AnalyseNumerique
         private void EcrireLog(string p)
         {
             tbConsole.Text += p + "\n";
+            typeMethode ype;
+        }
+
+        #region Evenement
+
+        private void btCalculer_Click(object sender, EventArgs e)
+        {
+            double a = 0;
+            double b = 0;
+            double value;
+            double precision = 0;
+            if (!double.TryParse(tbBorneInferieure.Text, out a) || !double.TryParse(tbBorneSuperieure.Text, out b) || !double.TryParse(tbPrecision.Text, out precision))
+                return;
+            switch (_typeMethode)
+            {
+                case typeMethode.Dichotomique:
+                    CalculDichotomique(a, b, precision, out value);
+                    break;
+                case typeMethode.Newton:
+                    break;
+                case typeMethode.Secante:
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void cbMethode_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,6 +156,21 @@ namespace AnalyseNumerique
                     break;
             }
         }
+
+        private void tbBorneInferieure_Validating(object sender, CancelEventArgs e)
+        {
+            errorProvider1.Clear();
+            double value;
+            string chaine = ((TextBox)sender).Text;
+            chaine = chaine.Replace('.', ',');
+            if (!double.TryParse(((TextBox)sender).Text,out value))
+            {
+                errorProvider1.SetError((Control)sender, "La valeur entrée est erronée");
+            }
+        }
+
+        #endregion
+
     }
 
     enum typeMethode

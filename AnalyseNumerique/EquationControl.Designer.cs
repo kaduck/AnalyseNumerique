@@ -56,7 +56,9 @@
             this.cbFonction.Items.AddRange(new object[] {
             "log",
             "ln",
-            "sin"});
+            "sin",
+            "cos",
+            "*"});
             this.cbFonction.Location = new System.Drawing.Point(34, 4);
             this.cbFonction.Name = "cbFonction";
             this.cbFonction.Size = new System.Drawing.Size(47, 21);
