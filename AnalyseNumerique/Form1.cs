@@ -169,6 +169,48 @@ namespace AnalyseNumerique
             tbResultat.Text = a.ToString();
         }
 
+        private void CalculSecante(double a, double b, double precision, double value)
+        {
+            double c=0;
+            double d=0;
+            double pente=0;
+            if (CalculFonction(a) * CalculFonction(b) > 0)
+            {
+                errorProvider1.SetError(tbBorneSuperieure, "Les bornes définies n'encadre pas la solution");
+                return;
+            }
+            value = CalculFonction(a);
+            if (value > -precision && value < precision)
+            {
+                EcrireLog("La solution de cette equation est x = " + a);
+                tbResultat.Text = a.ToString();
+                return;
+            }
+            value = CalculFonction(b);
+            if (value > -precision && value < precision)
+            {
+                EcrireLog("La solution de cette equation est x = " + b);
+                tbResultat.Text = a.ToString();
+                return;
+            }
+            do
+            {
+                c = CalculFonction(a);
+                d = CalculFonction(b);
+                pente = (a - b) / (c - d);
+                a = b;
+                b = b - pente * d;
+                if (CalculFonction(b) < precision && CalculFonction(b) > -precision)
+                {
+                    EcrireLog("La solution de cette equation est x = " + b);
+                    tbResultat.Text = b.ToString();
+                    return;
+                }
+            }while (Math.Abs(a - b) > precision);
+            EcrireLog("La solution de cette equation est x = " + b);
+            tbResultat.Text = b.ToString();
+        }
+
         private void EcrireLog(string p)
         {
             tbConsole.Text += p + "\n";
@@ -193,6 +235,7 @@ namespace AnalyseNumerique
                     CalculNewton(a, b, precision, value);
                     break;
                 case typeMethode.Secante:
+                    CalculSecante(a, b, precision, value);
                     break;
                 default:
                     break;
@@ -214,8 +257,8 @@ namespace AnalyseNumerique
                     _typeMethode = typeMethode.Newton;
                     break;
                 case "Secante":
-                    tbPrecision.Visible = false;
-                    lbPrecision.Visible = false;
+                    tbPrecision.Visible = true;
+                    lbPrecision.Visible = true;
                     _typeMethode = typeMethode.Secante;
                     break;
                 default:

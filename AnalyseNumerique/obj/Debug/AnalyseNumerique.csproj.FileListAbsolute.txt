@@ -28,3 +28,13 @@ E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique
 E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.Form1.resources
 E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.Properties.Resources.resources
 E:\Documents\GitHub\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.csproj.GenerateResource.Cache
+E:\Projet\AnalyseNumerique\AnalyseNumerique\bin\Debug\AnalyseNumerique.exe.config
+E:\Projet\AnalyseNumerique\AnalyseNumerique\bin\Debug\AnalyseNumerique.exe
+E:\Projet\AnalyseNumerique\AnalyseNumerique\bin\Debug\AnalyseNumerique.pdb
+E:\Projet\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.csprojResolveAssemblyReference.cache
+E:\Projet\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.EquationControl.resources
+E:\Projet\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.Form1.resources
+E:\Projet\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.Properties.Resources.resources
+E:\Projet\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.csproj.GenerateResource.Cache
+E:\Projet\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.exe
+E:\Projet\AnalyseNumerique\AnalyseNumerique\obj\Debug\AnalyseNumerique.pdb

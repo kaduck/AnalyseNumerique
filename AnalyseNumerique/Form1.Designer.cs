@@ -59,7 +59,7 @@
             this.cbMethode.Items.AddRange(new object[] {
             "Dichotomie",
             "Newton",
-            "Secantes"});
+            "Secante"});
             this.cbMethode.Location = new System.Drawing.Point(77, 9);
             this.cbMethode.Name = "cbMethode";
             this.cbMethode.Size = new System.Drawing.Size(121, 21);
@@ -235,8 +235,8 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(763, 483);
             this.Controls.Add(this.tbDegree);
             this.Controls.Add(this.label7);
