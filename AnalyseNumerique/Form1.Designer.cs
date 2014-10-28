@@ -245,7 +245,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbMethode);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Résolution d\'équation";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

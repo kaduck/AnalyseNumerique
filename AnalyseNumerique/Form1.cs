@@ -68,14 +68,12 @@ namespace AnalyseNumerique
             if (value > -precision && value < precision)
             {
                 EcrireLog("La solution de cette equation est x = "+a);
-                EcrireLog("Nombre d'itération : 1");
                 return;
             }
             value = CalculFonction(b);
             if (value > -precision && value < precision)
             {
                 EcrireLog("La solution de cette equation est x = "+b);
-                EcrireLog("Nombre d'itération : 1");
                 return;
             }
             int iteration = 0;
@@ -104,7 +102,6 @@ namespace AnalyseNumerique
             }
             while (value < - precision || value > precision);
             EcrireLog("La solution de cette equation est x = " + (a + b) / 2.0);
-            EcrireLog("Nombre d'itération : " + iteration);
         }
 
         private double CalculFonction(double a)
